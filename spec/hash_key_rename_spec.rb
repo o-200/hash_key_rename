@@ -5,7 +5,11 @@ RSpec.describe HashKeyRename do
     expect(HashKeyRename::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "it works lul" do
+    hash = { a: 123 }
+    hash.rename_key(:a, :b)
+
+    expect(hash.keys).to eq([:b])
+    expect(hash.values).to eq([123])
   end
 end
